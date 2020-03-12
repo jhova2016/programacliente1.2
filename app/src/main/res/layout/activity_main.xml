@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:gravity="center"
+    android:background="@color/colorFondoPrincipal"
+    android:id="@+id/ll">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+
+        android:orientation="vertical"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="2"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:text="Login"
+                android:textColor="@color/colorTextoTitulos"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width= "0dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_grupo"
+                android:elevation="5dp"
+                android:layout_weight="1"
+
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Porfavor Ingrese los datos"
+            android:textColor="@color/colorTextoGris"
+
+            android:layout_marginBottom="40dp"
+            />
+        <TextView
+            android:id="@+id/Alerta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Servidor no disponible"
+            android:textColor="@color/colorAlerta"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            android:visibility="invisible"
+            />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="10dp"
+            android:backgroundTint="@color/colorFondoEditText"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ip"
+                    android:elevation="5dp"
+
+                    />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="IP"
+                    android:textColorHint="@color/colorTextoGris"
+                    android:padding="8dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/IPEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:inputType="textEmailAddress"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:outlineSpotShadowColor="@color/colorTextoBlanco"
+                        android:textColor="@color/colorTextoBlanco"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="10dp"
+            android:backgroundTint="@color/colorFondoEditText"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/user"
+                    android:elevation="5dp"
+
+                    />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Usuario"
+                    android:textColorHint="@color/colorTextoGris"
+                    android:padding="8dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emailEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:inputType="textEmailAddress"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:outlineSpotShadowColor="@color/colorTextoBlanco"
+                        android:textColor="@color/colorTextoBlanco"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bankcardId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="10dp"
+            android:backgroundTint="@color/colorFondoEditText">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/pasword"
+                    android:elevation="5dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    android:textColorHint="@color/colorTextoGris"
+                    android:padding="8dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:inputType="textEmailAddress"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:outlineSpotShadowColor="@color/colorTextoBlanco"
+                        android:textColor="@color/colorTextoBlanco"
+                        android:id="@+id/passwordEdt"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="aceptar"
+
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/colorFondoBoton"
+            android:textColor="@color/colorTextoBlanco"/>
+
+    </LinearLayout>
+</LinearLayout>

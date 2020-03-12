@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+
+    android:orientation="vertical"
+    android:background="@color/colorFondoPrincipal"
+    android:weightSum="10"
+
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextoTitulos"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Servidor"
+                android:textColor="@color/colorFondoTarjetas"
+                />
+            <TextView
+                android:id="@+id/Servidor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="000.000.000"
+
+                android:textSize="50dp"
+
+                />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuario"
+            android:textColor="@color/colorFondoTarjetas"
+            />
+        <TextView
+            android:id="@+id/Usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"
+
+            android:textSize="30dp"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/Alerta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="Servidor no disponible"
+        android:textColor="@color/colorFondoPrincipal"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorFondoEditText"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="auto"
+        android:text="Hello World!"
+        android:layout_weight="10"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="5"
+        android:weightSum="2"
+        >
+        <Button
+            android:id="@+id/bo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:layout_weight="1"
+            android:background="@color/colorAux1"
+
+            />
+        <Button
+            android:id="@+id/bo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refresh"
+            android:layout_weight="1"
+            android:background="@color/colorFondoBoton"
+
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
