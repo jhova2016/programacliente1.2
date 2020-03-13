@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    android:layout_weight="1"
+    app:cardCornerRadius="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:backgroundTint="@color/colorFondoPrincipal"
+
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp"
+
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se descargara el siguiente archivo:"
+            android:textSize="20dp"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:textColor="@color/colorTextoTitulos"
+            />
+        <TextView
+            android:id="@+id/texto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="default"
+            android:textSize="15dp"
+            android:textColor="@color/colordir"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+            <Button
+                android:id="@+id/cancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cancelar"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/descargar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="descargar"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorFondoBoton"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

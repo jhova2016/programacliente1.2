@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,16 @@ public class adapter extends RecyclerView.Adapter<adapter.ViewHolderDatos> imple
     public void onBindViewHolder(@NonNull ViewHolderDatos holder, int position) {
         holder.dato.setText(ListDatos.get(position).getNombre());
         holder.tipo.setText(ListDatos.get(position).getTipo());
+        if(ListDatos.get(position).getTipo()=="File")
+        {
+            holder.fod.setImageResource(R.drawable.file);
+
+        }
+        else
+        {
+            holder.fod.setImageResource(R.drawable.directory);
+        }
+
 
     }
 
@@ -62,10 +73,12 @@ public class adapter extends RecyclerView.Adapter<adapter.ViewHolderDatos> imple
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
         TextView dato;
         TextView tipo;
+        ImageView fod;
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
             dato=itemView.findViewById(R.id.item);
             tipo=itemView.findViewById(R.id.tipo);
+            fod=itemView.findViewById(R.id.fileordir);
         }
 
 

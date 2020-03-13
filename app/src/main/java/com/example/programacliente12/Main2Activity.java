@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
@@ -17,6 +18,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,11 +43,12 @@ public class Main2Activity extends AppCompatActivity {
 
     TextView texto;
     TextView texto2;
-    Button btn1;
-    Button btn2;
+    TextView textoCarpeta;
+    ImageButton btn1;
+    ImageButton btn2;
     RecyclerView lista;
-    TextView Alerta;
 
+    AlertDialog DialogFiltros;
 
     FTPClient mFTPClient = null;
     String[] fileList = {""};
@@ -67,7 +71,7 @@ public class Main2Activity extends AppCompatActivity {
         btn1 = findViewById(R.id.bo);
         btn2 = findViewById(R.id.bo2);
         lista = findViewById(R.id.lista);
-        Alerta=findViewById(R.id.Alerta);
+        textoCarpeta=findViewById(R.id.carpeta);
         lista.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         names = new ArrayList<elemento>();
 
@@ -80,11 +84,15 @@ public class Main2Activity extends AppCompatActivity {
                 if(names.get(lista.getChildAdapterPosition(v)).getTipo()=="File")
                 {
                     nombrearchivo= names.get(lista.getChildAdapterPosition(v)).getNombre();
-                    new TestAsync5().execute();
+                    DialogFiltro();
+
+                    DialogFiltros.show();
+
                 }
                 else
                 {
                     nombrecarpeta=nombrecarpeta+"/"+ names.get(lista.getChildAdapterPosition(v)).getNombre();
+                    textoCarpeta.setText(nombrecarpeta);
 
                     names.clear();
                     new TestAsync6().execute();
@@ -108,6 +116,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 names.clear();
                 nombrecarpeta="";
+                textoCarpeta.setText(nombrecarpeta);
                 new TestAsync2().execute();
                 new TestAsync().execute();
 
@@ -127,6 +136,42 @@ public class Main2Activity extends AppCompatActivity {
 
 
     }
+
+    private void DialogFiltro()
+    {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        View view =View.inflate(this,R.layout.dialog,null);
+        TextView texto=view.findViewById(R.id.texto);
+        Button  cancelar=view.findViewById(R.id.cancelar);
+
+        Button  descargar=view.findViewById(R.id.descargar);
+
+        texto.setText( nombrearchivo);
+
+        //builder.setCancelable(false);
+        builder.setView(view);
+        DialogFiltros=builder.create();
+
+        descargar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new TestAsync5().execute();
+                DialogFiltros.dismiss();
+
+            }
+        });
+
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFiltros.dismiss();
+
+            }
+        });
+
+    }
+
     private void revisaPermisosAlmacenamiento() {
         int permissionCheck = ContextCompat.checkSelfPermission(
                 this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -248,16 +293,6 @@ public class Main2Activity extends AppCompatActivity {
             super.onPostExecute(result);
 
 
-            if(status)
-            {
-                Alerta.setText("activo");
-
-            }
-            else
-            {
-
-                Alerta.setText("inactivo");
-            }
 
 
 
@@ -302,17 +337,6 @@ public class Main2Activity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-
-            if(status)
-            {
-                Alerta.setText("activo");
-
-            }
-            else
-            {
-
-                Alerta.setText("inactivo");
-            }
 
 
 

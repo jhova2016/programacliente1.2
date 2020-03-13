@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 Usuariotxt=Usuario.getText().toString();
                 Contraseñatxt=Contraseña.getText().toString();
                 Iptxt=IP.getText().toString();
+
                 new TestAsync2().execute();
 
                 //startActivity(new Intent(getBaseContext(), Main2Activity.class));
